@@ -1,0 +1,64 @@
+<div class="text-center container mt-3"></div>
+<h3 *ngIf="this.empData.length==0">No Employee Data exists!!</h3>
+<button style="margin-left: 73.5%;" (click)="allowEmpAddfun()" class="btn btn-primary">Add Emp</button> 
+<table *ngIf="this.empData.length>0" class="table container">
+    <thead>
+      <tr>
+        <th scope="col">EMP ID </th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Designation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let e of empData">
+        <th scope="row">{{e.emp_Id}}</th>
+        <td>{{e.f_Name}}</td>
+        <td>{{e.l_Name}}</td>
+        <td>{{e.post}}</td>
+        <!-- <div (click)="edit(e)" style="position: absolute; display: block; width: 20px; background: red; height: 20px; margin-left: -2%; margin-top: 13px;" 
+        img src="https://cdn0.iconfinder.com/data/icons/glyphpack/45/edit-alt-512.png" ></div> -->
+        <button  style="background-color: #dc3545; margin-bottom: 4%;" (click)="delete(e)" class="btn btn-danger">Delete</button>
+      </tr>
+     
+    </tbody>
+  </table>
+
+  
+  <!-- <div *ngFor="let Eemp of empData">
+     
+      <app-emp-list [Eemp]></app-emp-list>
+  </div> -->
+<!-- <div *ngIf="addShowDiv">
+</div> -->
+
+<div *ngIf = "allowEmpAdd || allowEmpEdit">
+    <form (ngSubmit)="onAdd()">
+    <div class="mb-3 container">
+    <label for="exampleFormControlInput1" class="form-label">EMP ID</label>
+    <input style=" width: 264px" [(ngModel)]="eID" type="number" class="form-control" name="empid" id="empID"   >
+  </div>
+  <div class="mb-3 container">
+    <label for="exampleFormControlTextarea1" class="form-label">First Name</label>
+    <input style=" width: 264px" type="text" [(ngModel)]="fN" class="form-control" id="fName"  name="first" rows="3">
+  </div>
+  <div class="mb-3 container">
+    <label for="exampleFormControlTextarea1" class="form-label">Last Name</label>
+    <input style=" width: 264px" type="text" [(ngModel)]="lN" class="form-control" id="lName" name="last" rows="3">
+  </div>
+  <div class="mb-3 container">
+    <label for="exampleFormControlTextarea1" class="">Designation</label>
+    <input style=" width: 264px" type="text" [(ngModel)]="des" class="form-control" name="desg" id="desg" rows="3">
+  </div>
+  <button style="margin-left: 33%; margin-top: -5.5%;" type="button" (click)="DontallowEmpAddfun()" class="btn btn-warning">Cancel</button>
+  <button *ngIf="allowEmpAdd" style="margin-left: 1%; margin-top: -5.5%;" type="submit" class="btn btn-primary">Add Emp</button> 
+  <!-- <button  (click)="updateEmp()" *ngIf="allowEmpEdit" style="margin-left: 1%; margin-top: -5.5%;" class="btn btn-primary">Update Emp</button>  -->
+  
+</form>
+</div>
+    
+
+
+  
+ 
+  <!-- <app-emp-list></app-emp-list> -->
