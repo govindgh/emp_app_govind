@@ -1,3 +1,7 @@
+## GOVIND 18-jan-2025
+Making this repo as private since this is just clone code of "Assignment_RXLogix", steps - repo - settings - general - visibility - private
+to host live via gh pages -> repo - settings - pages - select branch - choose accordingly for angular - dist folder ka build jha js, css ye files ho only, no src, for simple html - index.html
+
 # EmpApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
